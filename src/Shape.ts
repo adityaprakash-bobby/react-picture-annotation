@@ -5,11 +5,11 @@ export const shapeStyle = {
   margin: 10,
   fontSize: 12,
   fontColor: "#212529",
-  fontBackground: "ff0000",
+  fontBackground: "#f8f9fa",
   fontFamily:
     "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif",
   shapeBackground: "hsla(210, 16%, 93%, 0.2)",
-  shapeStrokeStyle: "#f8f9fa",
+  shapeStrokeStyle: "#ff0000",
   shapeShadowStyle: "hsla(210, 9%, 31%, 0.35)"
 };
 
