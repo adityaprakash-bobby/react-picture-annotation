@@ -434,4 +434,4 @@ export default class ReactPictureAnnotation extends React.Component<
 //       this.onImageChange();
 //     });
 //   };
-// }
+}
