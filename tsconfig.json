@@ -12,7 +12,7 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "es6"
     ],
     "sourceMap": true,
     "allowJs": true,
