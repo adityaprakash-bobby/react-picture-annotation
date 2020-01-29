@@ -3,12 +3,19 @@
     "declarationDir": "dist/types",
     "outDir": "dist/lib",
     "baseUrl": "src",
-    "rootDirs": ["src", "stories"],
+    "rootDirs": [
+      "src",
+      "stories"
+    ],
     "module": "es2015",
     "target": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "sourceMap": true,
-    "allowJs": false,
+    "allowJs": true,
     "jsx": "react",
     "declaration": true,
     "moduleResolution": "node",
@@ -24,6 +31,15 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": ["src", "stories"],
-  "exclude": ["node_modules", "build", "dist", "example", "rollup.config.ts"]
+  "include": [
+    "src",
+    "stories"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "example",
+    "rollup.config.ts"
+  ]
 }
