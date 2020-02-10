@@ -37,7 +37,7 @@ const defaultState: IStageState = {
 
 export default class ReactPictureAnnotation extends React.Component<
   IReactPictureAnnotationProps
-> {
+  > {
   set selectedId(value: string | null) {
     const { onSelect } = this.props;
     this.selectedIdTrueValue = value;
@@ -47,6 +47,12 @@ export default class ReactPictureAnnotation extends React.Component<
   get selectedId() {
     return this.selectedIdTrueValue;
   }
+  public setSelectedId = (s: string) => {
+    if (s && s !== this.selectedId) {
+      this.selectedId = s;
+      this.onShapeChange();
+    }
+  }
   public static defaultProps = {
     inputElement: (
       value: string,
@@ -54,13 +60,13 @@ export default class ReactPictureAnnotation extends React.Component<
       onDelete: () => void,
       hideInput: (value: boolean) => void
     ) => (
-      <DefaultInputSection
-        value={value}
-        onChange={onChange}
-        onDelete={onDelete}
-        hideInput={hideInput}
-      />
-    )
+        <DefaultInputSection
+          value={value}
+          onChange={onChange}
+          onDelete={onDelete}
+          hideInput={hideInput}
+        />
+      )
   };
 
   public shapes: IShape[] = [];
@@ -162,7 +168,7 @@ export default class ReactPictureAnnotation extends React.Component<
           onMouseMove={this.onMouseMove}
           onMouseUp={this.onMouseUp}
           onMouseLeave={this.onMouseLeave}
-          //onWheel={this.onWheel}
+        // onWheel={this.onWheel}
         />
         {showInput && (
           <div className="rp-selected-input" style={inputPosition}>
@@ -289,12 +295,12 @@ export default class ReactPictureAnnotation extends React.Component<
     }
   };
 
-  private hideInput = (value : boolean) => {
+  private hideInput = (value: boolean) => {
     this.setState({
       showInput: value,
       inputComment: ""
     });
-  } 
+  }
 
   private setCanvasDPI = () => {
     const currentCanvas = this.canvasRef.current;
@@ -400,38 +406,41 @@ export default class ReactPictureAnnotation extends React.Component<
     this.currentAnnotationState.onMouseLeave();
   };
 
-//   private onWheel = (event: React.WheelEvent<HTMLCanvasElement>) => {
-//     // https://stackoverflow.com/a/31133823/9071503
-//     const { clientHeight, scrollTop, scrollHeight } = event.currentTarget;
-//     if (clientHeight + scrollTop + event.deltaY > scrollHeight) {
-//       // event.preventDefault();
-//       event.currentTarget.scrollTop = scrollHeight;
-//     } else if (scrollTop + event.deltaY < 0) {
-//       // event.preventDefault();
-//       event.currentTarget.scrollTop = 0;
-//     }
+  // private onWheel = (event: React.WheelEvent<HTMLCanvasElement>) => {
+  //   // https://stackoverflow.com/a/31133823/9071503
+  //   const { clientHeight, scrollTop, scrollHeight } = event.currentTarget;
+  //   if (clientHeight + scrollTop + event.deltaY > scrollHeight) {
+  //     // event.preventDefault();
+  //     event.currentTarget.scrollTop = scrollHeight;
+  //   } else if (scrollTop + event.deltaY < 0) {
+  //     // event.preventDefault();
+  //     event.currentTarget.scrollTop = 0;
+  //   }
 
-//     const { scale: preScale } = this.scaleState;
-//     this.scaleState.scale += event.deltaY * 0.005;
-//     if (this.scaleState.scale > 10) {
-//       this.scaleState.scale = 10;
-//     }
-//     if (this.scaleState.scale < 0.1) {
-//       this.scaleState.scale = 0.1;
-//     }
+  //   // const { scale: preScale } = this.scaleState;
+  //   this.scaleState.scale += event.deltaY * 0.005;
+  //   console.log("event delta y", event.deltaY);
+  //   console.log("scale state scale", this.scaleState.scale);
+  //   if (this.scaleState.scale > 2) {
+  //     this.scaleState.scale = 2;
+  //   }
+  //   if (this.scaleState.scale < 1) {
+  //     this.scaleState.scale = 1;
+  //   }
 
-//     const { originX, originY, scale } = this.scaleState;
-//     const { offsetX, offsetY } = event.nativeEvent;
-//     this.scaleState.originX =
-//       offsetX - ((offsetX - originX) / preScale) * scale;
-//     this.scaleState.originY =
-//       offsetY - ((offsetY - originY) / preScale) * scale;
+  //   // const { originX, originY, scale } = this.scaleState;
+  //   // const { offsetX, offsetY } = event.nativeEvent;
+  //   // this.scaleState.originX =
+  //   //   offsetX - ((offsetX - originX) / preScale) * scale;
+  //   // this.scaleState.originY =
+  //   //   offsetY - ((offsetY - originY) / preScale) * scale;
 
-//     this.setState({ imageScale: this.scaleState });
+  //   console.log("imagescale ", this.scaleState);
+  //   this.setState({ imageScale: this.scaleState });
 
-//     requestAnimationFrame(() => {
-//       this.onShapeChange();
-//       this.onImageChange();
-//     });
-//   };
+  //   requestAnimationFrame(() => {
+  //     this.onShapeChange();
+  //     this.onImageChange();
+  //   });
+  // };
 }
