@@ -29,6 +29,7 @@ export interface IShapeAdjustBase {
 
 export interface IShapeData extends IShapeBase {
   type: string;
+  strokeColor: string;
 }
 
 export interface IRectShapeData extends IShapeData {
@@ -104,7 +105,8 @@ export class RectShape implements IShape {
 
     canvas2D.shadowBlur = 10;
     canvas2D.shadowColor = shapeStyle.shapeShadowStyle;
-    canvas2D.strokeStyle = shapeStyle.shapeStrokeStyle;
+    //canvas2D.strokeStyle = shapeStyle.shapeStrokeStyle;
+    canvas2D.strokeStyle = this.annotationData.mark.strokeColor;
     canvas2D.lineWidth = 2;
     canvas2D.strokeRect(x, y, width, height);
     canvas2D.restore();
