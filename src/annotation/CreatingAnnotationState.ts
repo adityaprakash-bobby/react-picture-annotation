@@ -23,7 +23,7 @@ export default class CreatingAnnotationState implements IAnnotationState {
   };
 
   public onMouseUp = () => {
-    const { shapes, onShapeChange, setAnnotationState } = this.context;
+    const { shapes, onShapeChange, setAnnotationState, setSelectedId } = this.context;
     const data = shapes.pop();
     if (
       data &&
@@ -31,6 +31,10 @@ export default class CreatingAnnotationState implements IAnnotationState {
       data.getAnnotationData().mark.height !== 0
     ) {
       shapes.push(data);
+      /* abhishek */
+      console.log("data--->: ", data.getAnnotationData().id)
+      setSelectedId(data.getAnnotationData().id);
+      /*  */
     } else {
       this.context.selectedId = null;
       onShapeChange();
