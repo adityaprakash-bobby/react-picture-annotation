@@ -1,7 +1,7 @@
 {
-  "name": "react-picture-annotation",
+  "name": "@adityaprakash-bobby/react-picture-annotation",
   "version": "0.0.0-development",
-  "description": "A simple annotation component.",
+  "description": "A simple annotation component modified as per our project. Refer to main project by Kunduin.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "typings": "dist/types/src/index.d.ts",
@@ -16,7 +16,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kunduin/react-picture-annotation.git"
+    "url": "https://github.com/adityaprakash-bobby/react-picture-annotation.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "keywords": [
     "react",
@@ -27,9 +30,9 @@
   "author": "Bay",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Kunduin/react-picture-annotation/issues"
+    "url": "https://github.com/adityaprakash-bobby/react-picture-annotation/issues"
   },
-  "homepage": "https://github.com/Kunduin/react-picture-annotation#readme",
+  "homepage": "https://github.com/adityaprakash-bobby/react-picture-annotation#readme",
   "peerDependencies": {
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0"
