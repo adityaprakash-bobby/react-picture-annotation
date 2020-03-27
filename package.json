@@ -1,6 +1,6 @@
 {
   "name": "@adityaprakash-bobby/react-picture-annotation",
-  "version": "0.0.0-development",
+  "version": "0.0.2-development",
   "description": "A simple annotation component modified as per our project. Refer to main project by Kunduin.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
